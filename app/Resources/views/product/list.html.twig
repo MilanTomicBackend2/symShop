@@ -26,6 +26,7 @@
                         <td>{{product.title}}</td>
                         <td>{{ product.price }}</td>
                         <td><a href="{{ path('product_show', { 'name' :  product.title }) }}">Detail</a></td>
+                        <td><a href="{{ path('product_update', { 'id' : product.id ,'name' :  product.title }) }}">Izmeni</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

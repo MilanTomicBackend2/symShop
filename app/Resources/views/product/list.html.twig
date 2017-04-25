@@ -15,7 +15,9 @@
                     <th>Id</th>
                     <th>Naziv</th>              
                     <th>Cena</th>
+                    <th></th>
                     <th>Akcija</th>
+                    <th></th>
 
                 </tr>
             </thead>
@@ -26,7 +28,7 @@
                         <td>{{product.title}}</td>
                         <td>{{ product.price }}</td>
                         <td><a href="{{ path('product_show', { 'name' :  product.title }) }}">Detail</a></td>
-                        <td><a href="{{ path('product_update', { 'id' : product.id ,'name' :  product.title }) }}">Izmeni</a></td>
+                        <td><a href="{{ path('product_update', { 'id' : product.id  }) }}">Izmeni</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

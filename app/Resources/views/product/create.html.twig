@@ -1,0 +1,19 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+{% block title %}Unos novog proizvoda{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet" type="text/css" />    
+{% endblock %}
+{% block body %}
+    
+    <h1>Unesi novi proizvod</h1>
+    
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    
+{% endblock %}  
+{% block javascripts %}
+    <script src="{{ asset('js/main.js')}}" type="text/javascript"></script>
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock %}

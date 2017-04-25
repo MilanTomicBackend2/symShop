@@ -1,0 +1,50 @@
+{# empty Twig template #}
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet" type="text/css" />    
+{% endblock %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+
+
+
+    <section class="product-wrapper">
+        <h2>Naslovna strana</h2>
+        <div class="row">
+            {% for product in homepage %}
+
+                {% if product.price < 19 %}
+                    <!-- Ovo je sve jedan proizvod -->
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <article class="product">
+                            <span class="sticker">
+                                <img src="" alt=""/>
+                            </span>
+                            <figure>
+                                <img src="{{ absolute_url(asset('img/slika.jpg')) }}" alt=""/>
+                            </figure>
+                            <p class="product-title">{{ product.title }}</p>
+                            <div class="product-price">
+                                <p class="price ">Cena: <span>{{ product.price }}</span></p>
+                                <p class="discount-price">Opis: <span>{{ product.description }}</span></p>
+                            </div>
+                            <a href="{{ path('product_show', { 'name' :  product.title }) }}" class="more">Detail</a>
+                        </article>
+                    </div><!--Kraj proizvoda-->
+                {% endif %}  
+
+            {% endfor %}
+    </section>
+
+
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/main.js')}}" type="text/javascript"></script>
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+

@@ -1,0 +1,14 @@
+homepage:
+    path:       /
+    defaults:   { _controller: AppBundle:Product:homepage }    
+product_list:
+    path:       /product
+    defaults:   { _controller: AppBundle:Product:list }
+product_create:
+    path:       /product/create
+    defaults:   { _controller: AppBundle:Product:create }    
+product_show:
+    path:       /product/{name}
+    defaults:   { _controller: AppBundle:Product:show } 
+
+    

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        {% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block nav %}
+            <nav class="navbar navbar-default text-uppercase" style="background-color: #e1e1e1;">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="img/logo.png" alt="WEB SCHOOL" class="img-responsive">
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="main-menu">
+                        <ul class="nav navbar-nav navbar-right text-center">
+                            <li><a class="active" href="#">home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">portfolio</a></li>
+                            <li><a href="#">tim</a></li>
+                            <li><a href="#">blog</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        {% endblock %}
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+        <script src="../../../web/js/main.js" type="text/javascript"></script>
+        <link href="../../../web/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+</body>
+{% block footer %}
+    <footer>
+    <div class="container">
+        <p> Copyright &copy; Cubes School , Backend Course</p>
+        <a href="#top"><span class="fa fa-chevron-circle-up"></span></a>
+    </div>
+    </footer>
+{% endblock %}
+</html>

@@ -45,6 +45,23 @@ class ProductController extends Controller {
         'form' => $form->createView(),
     ));
     }
+    
+    public function updateAction(Request $request, $id) {
+        
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('AppBundle:products');
+        $product = $repository->find($id);
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $product = $form->getData();
+            $em->flush();
+            return $this->redirectToRoute('product_list');
+        }
+        return $this->render('product/update.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
 
     public function listAction() {
 
